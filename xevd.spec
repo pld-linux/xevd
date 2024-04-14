@@ -15,6 +15,7 @@ Source0:	https://github.com/mpeg5/xevd/archive/v%{gitref}/%{name}-%{gitref}.tar.
 # Source0-md5:	d1642df4b69196430e669d6b278e73d7
 Patch0:		%{name}-string.patch
 Patch1:		%{name}-link.patch
+Patch2:		%{name}-dangling-pointer.patch
 URL:		https://github.com/mpeg5/xevd
 BuildRequires:	cmake >= 3.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -128,6 +129,7 @@ Statyczna biblioteka XEVD (profil Baseline).
 %setup -q -n %{name}-%{gitref}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 echo "v%{version}" > version.txt
 

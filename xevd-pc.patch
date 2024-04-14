@@ -1,0 +1,28 @@
+--- xevd-0.4.1-4e76654c/pkgconfig/xevd.pc.in.orig	2022-12-21 06:54:35.000000000 +0100
++++ xevd-0.4.1-4e76654c/pkgconfig/xevd.pc.in	2024-04-14 20:47:22.619746994 +0200
+@@ -1,8 +1,8 @@
+ # --- xevd.pc.in file ---
+ prefix=@CMAKE_INSTALL_PREFIX@
+-exec_prefix=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_BINDIR@
+-libdir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_LIBDIR@
+-includedir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_INCLUDEDIR@/@LIB_NAME@
++exec_prefix=${prefix}
++libdir=@CMAKE_INSTALL_FULL_LIBDIR@
++includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@/@LIB_NAME@
+ 
+ Name: xevd
+ Description: eXtra-fast Essential Video Decoder (XEVD) (MAIN profile)
+--- xevd-0.4.1-4e76654c/pkgconfig/xevdb.pc.in.orig	2022-12-21 06:54:35.000000000 +0100
++++ xevd-0.4.1-4e76654c/pkgconfig/xevdb.pc.in	2024-04-14 20:51:08.961854127 +0200
+@@ -1,8 +1,8 @@
+ # --- xevdb.pc.in file ---
+ prefix=@CMAKE_INSTALL_PREFIX@
+-exec_prefix=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_BINDIR@
+-libdir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_LIBDIR@
+-includedir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_INCLUDEDIR@/@LIB_NAME_BASE@
++exec_prefix=${prefix}
++libdir=@CMAKE_INSTALL_FULL_LIBDIR@
++includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@/@LIB_NAME_BASE@
+ 
+ Name: xevdb
+ Description: eXtra-fast Essential Video Decoder (XEVD) (BASE profile)

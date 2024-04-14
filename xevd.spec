@@ -7,7 +7,7 @@ Summary(pl.UTF-8):	eXtra-fast Essential Video Decoder - szybki dekoder obrazu MP
 Name:		xevd
 Version:	0.4.1
 %define	gitref	%{version}-4e76654c
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/mpeg5/xevd/releases
@@ -17,6 +17,7 @@ Patch0:		%{name}-string.patch
 Patch1:		%{name}-link.patch
 Patch2:		%{name}-dangling-pointer.patch
 Patch3:		%{name}-comparison.patch
+Patch4:		%{name}-pc.patch
 URL:		https://github.com/mpeg5/xevd
 BuildRequires:	cmake >= 3.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -132,6 +133,7 @@ Statyczna biblioteka XEVD (profil Baseline).
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 echo "v%{version}" > version.txt
 

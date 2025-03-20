@@ -5,21 +5,19 @@
 Summary:	eXtra-fast Essential Video Decoder (MPEG-5 EVC)
 Summary(pl.UTF-8):	eXtra-fast Essential Video Decoder - szybki dekoder obrazu MPEG-5 EVC
 Name:		xevd
-Version:	0.4.1
-%define	gitref	%{version}-4e76654c
-Release:	2
+Version:	0.5.0
+Release:	1
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/mpeg5/xevd/releases
-Source0:	https://github.com/mpeg5/xevd/archive/v%{gitref}/%{name}-%{gitref}.tar.gz
-# Source0-md5:	d1642df4b69196430e669d6b278e73d7
+Source0:	https://github.com/mpeg5/xevd/archive/v%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	b900608dca5d683f06bac028d74c3976
 Patch0:		%{name}-string.patch
 Patch1:		%{name}-link.patch
-Patch2:		%{name}-dangling-pointer.patch
-Patch3:		%{name}-comparison.patch
 Patch4:		%{name}-pc.patch
 URL:		https://github.com/mpeg5/xevd
 BuildRequires:	cmake >= 3.5
+BuildRequires:	rpmbuild(macros) >= 1.605
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -128,11 +126,9 @@ Static XEVD library (Baseline Profile).
 Statyczna biblioteka XEVD (profil Baseline).
 
 %prep
-%setup -q -n %{name}-%{gitref}
+%setup -q
 %patch -P0 -p1
 %patch -P1 -p1
-%patch -P2 -p1
-%patch -P3 -p1
 %patch -P4 -p1
 
 echo "v%{version}" > version.txt

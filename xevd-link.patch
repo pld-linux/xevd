@@ -1,7 +1,7 @@
---- xevd-0.4.1-4e76654c/src_main/CMakeLists.txt.orig	2022-12-21 06:54:35.000000000 +0100
-+++ xevd-0.4.1-4e76654c/src_main/CMakeLists.txt	2024-04-13 19:47:21.643990768 +0200
-@@ -115,6 +115,7 @@ elseif( UNIX OR MINGW )
-                                                         LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+--- xevd-0.5.0/src_main/CMakeLists.txt.orig	2025-03-20 18:07:52.094656996 +0100
++++ xevd-0.5.0/src_main/CMakeLists.txt	2025-03-20 18:09:13.567572499 +0100
+@@ -109,6 +109,7 @@ elseif( UNIX OR MINGW )
+     set_target_properties(${LIB_NAME}_dynamic PROPERTIES FOLDER lib LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
      target_compile_definitions( ${LIB_NAME} PUBLIC ANY LINUX )
      target_link_libraries(${LIB_NAME} m)
 +    target_link_libraries(${LIB_NAME}_dynamic m)
